@@ -22,3 +22,15 @@ describe("Position", () => {
         expect(position.z).toBe(0);
     });
 });
+
+
+describe("Direction ", () => {
+    it("should have valid direction values", () => {
+        expect(Direction.N).toBe("N");
+        expect(Direction.S).toBe("S");
+        expect(Direction.E).toBe("E");
+        expect(Direction.W).toBe("W");
+        expect(Direction.Up).toBe("Up");
+        expect(Direction.Down).toBe("Down");
+    });
+});
