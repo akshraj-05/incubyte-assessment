@@ -21,5 +21,15 @@ class SpaceCraft {
         this.currentDirection = startingDirection;
         this.twoDDirection = startingDirection;
     }
+    getCurrentPosition() {
+        return this.currentPosition;
+    }
+
+    getCurrentDirection() {
+        return this.currentDirection;
+    }
 };
+
+
+
 module.exports = { Position, Direction ,SpaceCraft};
