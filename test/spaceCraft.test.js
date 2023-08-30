@@ -74,3 +74,77 @@ describe('SpaceCraft getCurrentDirection Method', () => {
         expect(currentDirection).toBe(startingDirection);
     });
 });
+
+//test for move forward methos
+
+describe('SpaceCraft moveForward Method', () => {
+    it('should move the spacecraft forward when facing North', () => {
+        const startingPosition = new Position(0, 0, 0);
+        const startingDirection = Direction.N;
+        const spacecraft = new SpaceCraft(startingPosition, startingDirection);
+
+        spacecraft.moveForward();
+
+        expect(spacecraft.getCurrentPosition()).toEqual(new Position(0, 1, 0));
+    });
+
+    it('should move the spacecraft forward when facing South', () => {
+        const startingPosition = new Position(0, 0, 0);
+        const startingDirection = Direction.S;
+        const spacecraft = new SpaceCraft(startingPosition, startingDirection);
+
+        spacecraft.moveForward();
+
+        expect(spacecraft.getCurrentPosition()).toEqual(new Position(0, -1, 0));
+    });
+
+    it('should move the spacecraft forward when facing East', () => {
+        const startingPosition = new Position(0, 0, 0);
+        const startingDirection = Direction.E;
+        const spacecraft = new SpaceCraft(startingPosition, startingDirection);
+
+        spacecraft.moveForward();
+
+        expect(spacecraft.getCurrentPosition()).toEqual(new Position(1, 0, 0));
+    });
+
+    it('should move the spacecraft forward when facing West', () => {
+        const startingPosition = new Position(0, 0, 0);
+        const startingDirection = Direction.W;
+        const spacecraft = new SpaceCraft(startingPosition, startingDirection);
+
+        spacecraft.moveForward();
+
+        expect(spacecraft.getCurrentPosition()).toEqual(new Position(-1, 0, 0));
+    });
+
+    it('should move the spacecraft upward when facing Up', () => {
+        const startingPosition = new Position(0, 0, 0);
+        const startingDirection = Direction.Up;
+        const spacecraft = new SpaceCraft(startingPosition, startingDirection);
+
+        spacecraft.moveForward();
+
+        expect(spacecraft.getCurrentPosition()).toEqual(new Position(0, 0, 1));
+    });
+
+    it('should move the spacecraft downward when facing Down', () => {
+        const startingPosition = new Position(0, 0, 0);
+        const startingDirection = Direction.Down;
+        const spacecraft = new SpaceCraft(startingPosition, startingDirection);
+
+        spacecraft.moveForward();
+
+        expect(spacecraft.getCurrentPosition()).toEqual(new Position(0, 0, -1));
+    });
+
+    it('should not change position for an invalid direction', () => {
+        const startingPosition = new Position(0, 0, 0);
+        const startingDirection = 'InvalidDirection';
+        const spacecraft = new SpaceCraft(startingPosition, startingDirection);
+
+        spacecraft.moveForward();
+
+        expect(spacecraft.getCurrentPosition()).toEqual(startingPosition);
+    });
+});
