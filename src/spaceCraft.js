@@ -28,6 +28,32 @@ class SpaceCraft {
     getCurrentDirection() {
         return this.currentDirection;
     }
+
+    
+    moveForward() {
+        switch (this.currentDirection) {
+            case Direction.N:
+                this.currentPosition.y++;
+                break;
+            case Direction.S:
+                this.currentPosition.y--;
+                break;
+            case Direction.E:
+                this.currentPosition.x++;
+                break;
+            case Direction.W:
+                this.currentPosition.x--;
+                break;
+            case Direction.Up:
+                this.currentPosition.z++;
+                break;
+            case Direction.Down:
+                this.currentPosition.z--;
+                break;
+            default:
+                console.error("Invalid input");
+        }
+    }
 };
 
 
