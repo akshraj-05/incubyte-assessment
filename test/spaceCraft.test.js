@@ -1,6 +1,6 @@
 const  {Position,Direction} = require("../src/spaceCraft");
 
-
+//test for Position class
 describe("Position", () => {
     it("should create a position with the specified coordinates", () => {
         const x = 5;
@@ -23,7 +23,7 @@ describe("Position", () => {
     });
 });
 
-
+//test for DIrection Object
 describe("Direction ", () => {
     it("should have valid direction values", () => {
         expect(Direction.N).toBe("N");
@@ -32,5 +32,19 @@ describe("Direction ", () => {
         expect(Direction.W).toBe("W");
         expect(Direction.Up).toBe("Up");
         expect(Direction.Down).toBe("Down");
+    });
+});
+
+//test for SpaceCraft class constructor
+describe('SpaceCraft Constructor', () => {
+    it('should initialize with the provided starting position and direction', () => {
+        const startingPosition = new Position(2, 3, 4);
+        const startingDirection = Direction.S;
+
+        const spacecraft = new SpaceCraft(startingPosition, startingDirection);
+
+        expect(spacecraft.currentPosition).toEqual(startingPosition);
+        expect(spacecraft.currentDirection).toBe(startingDirection);
+        expect(spacecraft.twoDDirection).toBe(startingDirection);
     });
 });
