@@ -5,4 +5,13 @@ class Position {
         this.z = z;
     }
 }
-module.exports = {Position};
+
+const Direction = {
+    N: "N",
+    S: "S",
+    E: "E",
+    W: "W",
+    Up: "Up",
+    Down: "Down"
+};
+module.exports = {Position,Direction};

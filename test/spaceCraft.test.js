@@ -1,4 +1,4 @@
-const  {Position} = require("../src/spaceCraft");
+const  {Position,Direction} = require("../src/spaceCraft");
 
 
 describe("Position", () => {
