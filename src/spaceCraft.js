@@ -21,6 +21,30 @@ class SpaceCraft {
         this.currentDirection = startingDirection;
         this.twoDDirection = startingDirection;
     }
+    processCommands(commands) {
+        for (const command of commands) {
+            switch (command) {
+                case 'f':
+                    this.moveForward();
+                    break;
+                case 'b':
+                    this.moveBackward();
+                    break;
+                case 'l':
+                    this.turnLeft();
+                    break;
+                case 'r':
+                    this.turnRight();
+                    break;
+                case 'u':
+                    this.turnUp();
+                    break;
+                case 'd':
+                    this.turnDown();
+                    break;
+            }
+        }
+    }
     getCurrentPosition() {
         return this.currentPosition;
     }
