@@ -1,4 +1,6 @@
-const  Position = require("../src/main");
+const  {Position} = require("../src/spaceCraft");
+
+
 describe("Position", () => {
     it("should create a position with the specified coordinates", () => {
         const x = 5;
