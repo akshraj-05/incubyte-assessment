@@ -29,7 +29,7 @@ class SpaceCraft {
         return this.currentDirection;
     }
 
-    
+
     moveForward() {
         switch (this.currentDirection) {
             case Direction.N:
@@ -103,9 +103,32 @@ class SpaceCraft {
         }
     }
 
+    turnRight() {
+        switch (this.twoDDirection) {
+            case Direction.N:
+                this.currentDirection = Direction.E;
+                this.twoDDirection = Direction.E;
+                break;
+            case Direction.S:
+                this.currentDirection = Direction.W;
+                this.twoDDirection = Direction.W;
+                break;
+            case Direction.E:
+                this.currentDirection = Direction.S;
+                this.twoDDirection = Direction.S;
+                break;
+            case Direction.W:
+                this.currentDirection = Direction.N;
+                this.twoDDirection = Direction.N;
+                break;
+            default:
+                console.error("Invalid input");
+        }
+    }
+
 
 };
 
 
 
-module.exports = { Position, Direction ,SpaceCraft};
+module.exports = { Position, Direction, SpaceCraft };

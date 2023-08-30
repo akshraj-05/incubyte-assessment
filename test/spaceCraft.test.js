@@ -368,3 +368,146 @@ describe('SpaceCraft turnLeft Method', () => {
         expect(spacecraft.getCurrentDirection()).toBe(startingDirection);
     });
 });
+
+//test for turn right method
+
+
+describe('SpaceCraft turnRight Method', () => {
+    it('should turn the spacecraft right when facing North', () => {
+        const startingPosition = new Position(0, 0, 0);
+        const startingDirection = Direction.N;
+        const spacecraft = new SpaceCraft(startingPosition, startingDirection);
+
+        spacecraft.turnRight();
+
+        expect(spacecraft.getCurrentDirection()).toBe(Direction.E);
+    });
+
+    it('should turn the spacecraft right when facing South', () => {
+        const startingPosition = new Position(0, 0, 0);
+        const startingDirection = Direction.S;
+        const spacecraft = new SpaceCraft(startingPosition, startingDirection);
+
+        spacecraft.turnRight();
+
+        expect(spacecraft.getCurrentDirection()).toBe(Direction.W);
+    });
+
+    it('should turn the spacecraft right when facing East', () => {
+        const startingPosition = new Position(0, 0, 0);
+        const startingDirection = Direction.E;
+        const spacecraft = new SpaceCraft(startingPosition, startingDirection);
+
+        spacecraft.turnRight();
+
+        expect(spacecraft.getCurrentDirection()).toBe(Direction.S);
+    });
+
+    it('should turn the spacecraft right when facing West', () => {
+        const startingPosition = new Position(0, 0, 0);
+        const startingDirection = Direction.W;
+        const spacecraft = new SpaceCraft(startingPosition, startingDirection);
+
+        spacecraft.turnRight();
+
+        expect(spacecraft.getCurrentDirection()).toBe(Direction.N);
+    });
+
+    it('should turn the spacecraft right when facing Up and twoDDirection is North', () => {
+        const startingPosition = new Position(0, 0, 0);
+        const startingDirection = Direction.N;
+        const spacecraft = new SpaceCraft(startingPosition, startingDirection);
+        spacecraft.currentDirection = Direction.Up;
+
+        spacecraft.turnRight();
+
+        expect(spacecraft.getCurrentDirection()).toBe(Direction.E);
+    });
+
+    it('should turn the spacecraft right when facing Up and twoDDirection is South', () => {
+        const startingPosition = new Position(0, 0, 0);
+        const startingDirection = Direction.S;
+        const spacecraft = new SpaceCraft(startingPosition, startingDirection);
+        spacecraft.currentDirection = Direction.Up;
+
+        spacecraft.turnRight();
+
+        expect(spacecraft.getCurrentDirection()).toBe(Direction.W);
+    });
+
+    it('should turn the spacecraft right when facing Up and twoDDirection is East', () => {
+        const startingPosition = new Position(0, 0, 0);
+        const startingDirection = Direction.E;
+        const spacecraft = new SpaceCraft(startingPosition, startingDirection);
+        spacecraft.currentDirection = Direction.Up;
+
+        spacecraft.turnRight();
+
+        expect(spacecraft.getCurrentDirection()).toBe(Direction.S);
+    });
+
+    it('should turn the spacecraft right when facing Up and twoDDirection is West', () => {
+        const startingPosition = new Position(0, 0, 0);
+        const startingDirection = Direction.W;
+        const spacecraft = new SpaceCraft(startingPosition, startingDirection);
+        spacecraft.currentDirection = Direction.Up;
+
+        spacecraft.turnRight();
+
+        expect(spacecraft.getCurrentDirection()).toBe(Direction.N);
+    });
+
+    it('should turn the spacecraft right when facing Down and twoDDirection is North', () => {
+        const startingPosition = new Position(0, 0, 0);
+        const startingDirection = Direction.N;
+        const spacecraft = new SpaceCraft(startingPosition, startingDirection);
+        spacecraft.currentDirection = Direction.Down;
+
+        spacecraft.turnRight();
+
+        expect(spacecraft.getCurrentDirection()).toBe(Direction.E);
+    });
+
+    it('should turn the spacecraft right when facing Down and twoDDirection is South', () => {
+        const startingPosition = new Position(0, 0, 0);
+        const startingDirection = Direction.S;
+        const spacecraft = new SpaceCraft(startingPosition, startingDirection);
+        spacecraft.currentDirection = Direction.Down;
+
+        spacecraft.turnRight();
+
+        expect(spacecraft.getCurrentDirection()).toBe(Direction.W);
+    });
+
+    it('should turn the spacecraft right when facing Down and twoDDirection is East', () => {
+        const startingPosition = new Position(0, 0, 0);
+        const startingDirection = Direction.E;
+        const spacecraft = new SpaceCraft(startingPosition, startingDirection);
+        spacecraft.currentDirection = Direction.Down;
+
+        spacecraft.turnRight();
+
+        expect(spacecraft.getCurrentDirection()).toBe(Direction.S);
+    });
+
+    it('should turn the spacecraft right when facing Down and twoDDirection is West', () => {
+        const startingPosition = new Position(0, 0, 0);
+        const startingDirection = Direction.W;
+        const spacecraft = new SpaceCraft(startingPosition, startingDirection);
+        spacecraft.currentDirection = Direction.Down;
+
+        spacecraft.turnRight();
+
+        expect(spacecraft.getCurrentDirection()).toBe(Direction.N);
+    });
+
+    it('should not change direction for an invalid direction', () => {
+        const startingPosition = new Position(0, 0, 0);
+        const startingDirection = 'InvalidDirection';
+        const spacecraft = new SpaceCraft(startingPosition, startingDirection);
+
+        spacecraft.turnRight();
+
+        expect(spacecraft.getCurrentDirection()).toBe(startingDirection);
+    });
+});
