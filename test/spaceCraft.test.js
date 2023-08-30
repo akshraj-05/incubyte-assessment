@@ -511,3 +511,130 @@ describe('SpaceCraft turnRight Method', () => {
         expect(spacecraft.getCurrentDirection()).toBe(startingDirection);
     });
 });
+
+//test for turn Up method
+
+
+describe('SpaceCraft turnUp Method', () => {
+    it('should turn the spacecraft upwards when facing North', () => {
+        const startingPosition = new Position(0, 0, 0);
+        const startingDirection = Direction.N;
+        const spacecraft = new SpaceCraft(startingPosition, startingDirection);
+
+        spacecraft.turnUp();
+
+        expect(spacecraft.getCurrentDirection()).toBe(Direction.Up);
+    });
+
+    it('should turn the spacecraft upwards when facing South', () => {
+        const startingPosition = new Position(0, 0, 0);
+        const startingDirection = Direction.S;
+        const spacecraft = new SpaceCraft(startingPosition, startingDirection);
+
+        spacecraft.turnUp();
+
+        expect(spacecraft.getCurrentDirection()).toBe(Direction.Up);
+    });
+
+    it('should turn the spacecraft upwards when facing East', () => {
+        const startingPosition = new Position(0, 0, 0);
+        const startingDirection = Direction.E;
+        const spacecraft = new SpaceCraft(startingPosition, startingDirection);
+
+        spacecraft.turnUp();
+
+        expect(spacecraft.getCurrentDirection()).toBe(Direction.Up);
+    });
+
+    it('should turn the spacecraft upwards when facing West', () => {
+        const startingPosition = new Position(0, 0, 0);
+        const startingDirection = Direction.W;
+        const spacecraft = new SpaceCraft(startingPosition, startingDirection);
+
+        spacecraft.turnUp();
+
+        expect(spacecraft.getCurrentDirection()).toBe(Direction.Up);
+    });
+
+    it('should keep the spacecraft direction as Up when already facing Up', () => {
+        const startingPosition = new Position(0, 0, 0);
+        const startingDirection = Direction.Up;
+        const spacecraft = new SpaceCraft(startingPosition, startingDirection);
+
+        spacecraft.turnUp();
+
+        expect(spacecraft.getCurrentDirection()).toBe(Direction.Up);
+    });
+    it('should turn the spacecraft upwards when facing Down', () => {
+        const startingPosition = new Position(0, 0, 0);
+        const startingDirection = Direction.Down;
+        const spacecraft = new SpaceCraft(startingPosition, startingDirection);
+
+        spacecraft.turnUp();
+
+        expect(spacecraft.getCurrentDirection()).toBe(Direction.Up);
+    });
+});
+
+//test for turn down method
+
+describe('SpaceCraft turnDown Method', () => {
+    it('should turn the spacecraft downwards when facing North', () => {
+        const startingPosition = new Position(0, 0, 0);
+        const startingDirection = Direction.N;
+        const spacecraft = new SpaceCraft(startingPosition, startingDirection);
+
+        spacecraft.turnDown();
+
+        expect(spacecraft.getCurrentDirection()).toBe(Direction.Down);
+    });
+
+    it('should turn the spacecraft downwards when facing South', () => {
+        const startingPosition = new Position(0, 0, 0);
+        const startingDirection = Direction.S;
+        const spacecraft = new SpaceCraft(startingPosition, startingDirection);
+
+        spacecraft.turnDown();
+
+        expect(spacecraft.getCurrentDirection()).toBe(Direction.Down);
+    });
+
+    it('should turn the spacecraft downwards when facing East', () => {
+        const startingPosition = new Position(0, 0, 0);
+        const startingDirection = Direction.E;
+        const spacecraft = new SpaceCraft(startingPosition, startingDirection);
+
+        spacecraft.turnDown();
+
+        expect(spacecraft.getCurrentDirection()).toBe(Direction.Down);
+    });
+
+    it('should turn the spacecraft downwards when facing West', () => {
+        const startingPosition = new Position(0, 0, 0);
+        const startingDirection = Direction.W;
+        const spacecraft = new SpaceCraft(startingPosition, startingDirection);
+
+        spacecraft.turnDown();
+
+        expect(spacecraft.getCurrentDirection()).toBe(Direction.Down);
+    });
+
+    it('should keep the spacecraft direction as Down when already facing Down', () => {
+        const startingPosition = new Position(0, 0, 0);
+        const startingDirection = Direction.Down;
+        const spacecraft = new SpaceCraft(startingPosition, startingDirection);
+
+        spacecraft.turnDown();
+
+        expect(spacecraft.getCurrentDirection()).toBe(Direction.Down);
+    });
+    it('should turn the spacecraft downwards when facing Up', () => {
+        const startingPosition = new Position(0, 0, 0);
+        const startingDirection = Direction.Up;
+        const spacecraft = new SpaceCraft(startingPosition, startingDirection);
+
+        spacecraft.turnDown();
+
+        expect(spacecraft.getCurrentDirection()).toBe(Direction.Down);
+    });
+});
