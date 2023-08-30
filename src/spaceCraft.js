@@ -126,6 +126,14 @@ class SpaceCraft {
         }
     }
 
+    turnUp() {
+        this.currentDirection = Direction.Up;
+    }
+
+    turnDown() {
+        this.currentDirection = Direction.Down;
+    }
+
 
 };
 
