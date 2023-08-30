@@ -638,3 +638,48 @@ describe('SpaceCraft turnDown Method', () => {
         expect(spacecraft.getCurrentDirection()).toBe(Direction.Down);
     });
 });
+
+//test for process command method
+
+describe('SpaceCraft processCommands Method', () => {
+    it('should process forward and backward commands correctly', () => {
+        const startingPosition = new Position(0, 0, 0);
+        const startingDirection = Direction.N;
+        const spacecraft = new SpaceCraft(startingPosition, startingDirection);
+
+        spacecraft.processCommands(['f', 'f', 'b', 'f', 'b']);
+
+        expect(spacecraft.getCurrentPosition()).toEqual(new Position(0, 1, 0));
+    });
+
+    it('should process turning commands correctly', () => {
+        const startingPosition = new Position(0, 0, 0);
+        const startingDirection = Direction.N;
+        const spacecraft = new SpaceCraft(startingPosition, startingDirection);
+
+        spacecraft.processCommands(['l', 'r', 'l', 'r', 'l', 'l']);
+
+        expect(spacecraft.getCurrentDirection()).toBe(Direction.S);
+    });
+
+    it('should process turning up and down commands correctly', () => {
+        const startingPosition = new Position(0, 0, 0);
+        const startingDirection = Direction.N;
+        const spacecraft = new SpaceCraft(startingPosition, startingDirection);
+
+        spacecraft.processCommands(['u', 'u', 'd']);
+
+        expect(spacecraft.getCurrentDirection()).toBe(Direction.Down);
+    });
+
+    it('should ignore invalid commands', () => {
+        const startingPosition = new Position(0, 0, 0);
+        const startingDirection = Direction.N;
+        const spacecraft = new SpaceCraft(startingPosition, startingDirection);
+
+        spacecraft.processCommands(['f', 'x', 'l', 'u', 'invalid', 'r', 'z']);
+
+        expect(spacecraft.getCurrentPosition()).toEqual(new Position(0, 1, 0));
+        expect(spacecraft.getCurrentDirection()).toBe(Direction.N);
+    });
+});
