@@ -1,4 +1,4 @@
-const  {Position,Direction} = require("../src/spaceCraft");
+const  {Position,Direction,SpaceCraft} = require("../src/spaceCraft");
 
 //test for Position class
 describe("Position", () => {

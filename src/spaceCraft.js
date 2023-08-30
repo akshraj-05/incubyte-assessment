@@ -14,4 +14,12 @@ const Direction = {
     Up: "Up",
     Down: "Down"
 };
-module.exports = {Position,Direction};
+
+class SpaceCraft {
+    constructor(startingPosition, startingDirection) {
+        this.currentPosition = startingPosition;
+        this.currentDirection = startingDirection;
+        this.twoDDirection = startingDirection;
+    }
+};
+module.exports = { Position, Direction ,SpaceCraft};
