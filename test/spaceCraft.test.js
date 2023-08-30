@@ -48,3 +48,29 @@ describe('SpaceCraft Constructor', () => {
         expect(spacecraft.twoDDirection).toBe(startingDirection);
     });
 });
+
+//test for get current position
+describe('SpaceCraft getCurrentPosition Method', () => {
+    it('should return the current position of the spacecraft', () => {
+        const startingPosition = new Position(2, 3, 4);
+        const startingDirection = Direction.S;
+        const spacecraft = new SpaceCraft(startingPosition, startingDirection);
+
+        const currentPosition = spacecraft.getCurrentPosition();
+
+        expect(currentPosition).toEqual(startingPosition);
+    });
+});
+
+//test for get current position
+describe('SpaceCraft getCurrentDirection Method', () => {
+    it('should return the current direction of the spacecraft', () => {
+        const startingPosition = new Position(2, 3, 4);
+        const startingDirection = Direction.S;
+        const spacecraft = new SpaceCraft(startingPosition, startingDirection);
+
+        const currentDirection = spacecraft.getCurrentDirection();
+
+        expect(currentDirection).toBe(startingDirection);
+    });
+});
